@@ -13,9 +13,10 @@ class App extends Component {
 
   render() {
     const { authedUser } = this.props;
+    console.log(authedUser);
     return (
       <div>
-        {authedUser !== null ? (
+        {authedUser === null ? (
           <SignIn />
         ) : (
           <div>
@@ -30,4 +31,10 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser,
+  };
+}
+
+export default connect(mapStateToProps)(App);
