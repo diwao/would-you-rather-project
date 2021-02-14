@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import SignIn from './SignIn';
 import Dashboard from './Dashboard';
-import Question from './Question';
+import QuestionPage from './QuestionPage';
 import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion';
 class App extends Component {
@@ -21,7 +21,7 @@ class App extends Component {
         ) : (
           <div>
             <Dashboard />
-            <Question />
+            <QuestionPage />
             <LeaderBoard />
             <NewQuestion />
           </div>
