@@ -21,7 +21,7 @@ class App extends Component {
         ) : (
           <div>
             <Dashboard />
-            <QuestionPage />
+            <QuestionPage id="xj352vofupe1dqz9emx13r" />
             <LeaderBoard />
             <NewQuestion />
           </div>
