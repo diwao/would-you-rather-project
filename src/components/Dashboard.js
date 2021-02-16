@@ -41,7 +41,7 @@ class Dashboard extends Component {
           </label>
         </div>
         {this.props.questionIds.map((questionId) => (
-          <Question key={questionId} id={questionId} />
+          <Question key={questionId} id={questionId} tab={this.state.tab} />
         ))}
       </div>
     );

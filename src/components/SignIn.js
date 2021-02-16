@@ -31,6 +31,7 @@ class SignIn extends Component {
         <h3>Sign in</h3>
         <form onSubmit={this.handleSubmit}>
           <select onChange={this.handleChange}>
+            <option value=""></option>
             {this.props.userIds.map((userId) => (
               <option value={userId} key={userId}>
                 {userId}
