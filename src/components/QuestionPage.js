@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestionInput from './QuestionInput';
+import QuestionResult from './QuestionResult';
 
 class QuestionPage extends Component {
   render() {
@@ -8,11 +9,18 @@ class QuestionPage extends Component {
       <div>
         <h2>question page.</h2>
         <span>{`answered: ${this.props.answered}`}</span>
-        <span>{this.props.author.name}</span>
-        <QuestionInput
-          question={this.props.question}
-          author={this.props.author}
-        />
+        {this.props.answered === true ? (
+          <QuestionResult
+            question={this.props.question}
+            author={this.props.author}
+            authedUser={this.props.authedUser}
+          />
+        ) : (
+          <QuestionInput
+            question={this.props.question}
+            author={this.props.author}
+          />
+        )}
       </div>
     );
   }
