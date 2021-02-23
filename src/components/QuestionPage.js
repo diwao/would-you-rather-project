@@ -40,7 +40,10 @@ class QuestionPage extends Component {
 }
 
 function mapStateToProps({ authedUser, users, questions }, { id }) {
-  const answered = Object.keys(users[authedUser].answers).includes(id);
+  //const answered = Object.keys(users[authedUser].answers).includes(id);
+  const answered =
+    questions[id].optionOne.votes.includes(authedUser) ||
+    questions[id].optionTwo.votes.includes(authedUser);
   const author = users[questions[id].author];
   console.log(author);
   return {
