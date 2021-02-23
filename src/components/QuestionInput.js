@@ -15,7 +15,8 @@ class QuestionInput extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    const selectedOption = this.state.option;
+    this.props.handleVote(selectedOption);
   };
 
   render(props) {
@@ -52,7 +53,7 @@ class QuestionInput extends Component {
                 </label>
               </li>
             </ul>
-            <button>Submit</button>
+            <button onSubmit={this.handleSubmit}>Submit</button>
           </form>
         </div>
       </div>

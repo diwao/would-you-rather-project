@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestionInput from './QuestionInput';
 import QuestionResult from './QuestionResult';
+import { handleSaveQuestionAnswer } from '../actions/questions';
 
 class QuestionPage extends Component {
+  handleVote = (selectedOption) => {
+    const { dispatch, question } = this.props;
+
+    dispatch(
+      handleSaveQuestionAnswer({
+        qid: question.id,
+        answer: selectedOption,
+      })
+    );
+  };
+
   render() {
     return (
       <div>
@@ -19,6 +31,7 @@ class QuestionPage extends Component {
           <QuestionInput
             question={this.props.question}
             author={this.props.author}
+            handleVote={this.handleVote}
           />
         )}
       </div>
