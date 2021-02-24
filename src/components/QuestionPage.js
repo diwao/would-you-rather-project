@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import QuestionInput from './QuestionInput';
 import QuestionResult from './QuestionResult';
 import { handleSaveQuestionAnswer } from '../actions/questions';
+import { handleInitialData } from '../actions/shared';
 
 class QuestionPage extends Component {
   handleVote = (selectedOption) => {
@@ -13,7 +14,7 @@ class QuestionPage extends Component {
         qid: question.id,
         answer: selectedOption,
       })
-    );
+    ).then(dispatch(handleInitialData()));
   };
 
   render() {
@@ -39,7 +40,8 @@ class QuestionPage extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, users, questions }, { id }) {
+function mapStateToProps({ authedUser, users, questions }, props) {
+  const { id } = props.match.params;
   //const answered = Object.keys(users[authedUser].answers).includes(id);
   const answered =
     questions[id].optionOne.votes.includes(authedUser) ||
