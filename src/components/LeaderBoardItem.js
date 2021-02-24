@@ -6,7 +6,7 @@ class LeaderBoardItem extends Component {
     const { user } = this.props;
     return (
       <li>
-        <p>{user.avatarURL}</p>
+        <img src={user.avatarURL} alt={user.name} />
         <p>Name: {user.name}</p>
         <p>Answers: {Object.keys(user.answers).length}</p>
         <p>Questions: {user.questions.length}</p>
