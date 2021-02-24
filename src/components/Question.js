@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Link, withRouter } from 'react-router-dom';
 class Question extends Component {
   render() {
     const { question, users, answered, isShow } = this.props;
@@ -17,7 +17,9 @@ class Question extends Component {
           </div>
           <h4>Would you rather</h4>
           <p>{question.optionOne.text}</p>
-          <button>View Poll</button>
+          <Link to={`/question/${question.id}`}>
+            <button>View Poll</button>
+          </Link>
           <p>{`answer: ${answered}`}</p>
         </div>
       </article>
@@ -27,7 +29,6 @@ class Question extends Component {
 
 function mapStateToProps({ authedUser, users, questions }, { id, tab }) {
   const question = questions[id];
-  console.log(authedUser);
   const answered = Object.keys(users[authedUser].answers).includes(id);
   return {
     authedUser,
@@ -40,4 +41,4 @@ function mapStateToProps({ authedUser, users, questions }, { id, tab }) {
   };
 }
 
-export default connect(mapStateToProps)(Question);
+export default withRouter(connect(mapStateToProps)(Question));
