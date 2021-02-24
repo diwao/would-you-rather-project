@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleSaveQuestion } from '../actions/questions';
+import { handleInitialData } from '../actions/shared';
 
 class NewQuestion extends Component {
   state = {
@@ -26,7 +27,11 @@ class NewQuestion extends Component {
     e.preventDefault();
     const { optionOneText, optionTwoText } = this.state;
     const { dispatch } = this.props;
-    dispatch(handleSaveQuestion({ optionOneText, optionTwoText }));
+    dispatch(handleSaveQuestion({ optionOneText, optionTwoText }))
+      .then(dispatch(handleInitialData()))
+      .then(() => {
+        this.props.history.push(`/`);
+      });
     this.setState(() => ({
       optionOneText: '',
       optionTwoText: '',
