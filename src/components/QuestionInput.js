@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import BaseButton from './BaseButton';
 class QuestionInput extends Component {
   state = {
     option: null,
@@ -53,7 +53,7 @@ class QuestionInput extends Component {
                 </label>
               </li>
             </ul>
-            <button onSubmit={this.handleSubmit}>Submit</button>
+            <BaseButton type="submit">Sign in</BaseButton>
           </form>
         </div>
       </div>

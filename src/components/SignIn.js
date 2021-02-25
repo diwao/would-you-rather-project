@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setAuthedUser } from '../actions/authedUser';
+import BaseButton from './BaseButton';
 class SignIn extends Component {
   state = {
     selectedId: '',
@@ -38,7 +39,7 @@ class SignIn extends Component {
               </option>
             ))}
           </select>
-          <button type="submit">Sign In</button>
+          <BaseButton type="submit">Sign in</BaseButton>
         </form>
       </div>
     );

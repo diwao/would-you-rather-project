@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleSaveQuestion } from '../actions/questions';
 import { handleInitialData } from '../actions/shared';
+import BaseButton from './BaseButton';
 
 class NewQuestion extends Component {
   state = {
@@ -59,12 +60,18 @@ class NewQuestion extends Component {
             value={optionTwoText}
             onChange={this.handleOptionTwo}
           />
-          <button
+          {/* <button
             type="submit"
             disabled={optionOneText === '' || optionTwoText === ''}
           >
             Submit
-          </button>
+          </button> */}
+          <BaseButton
+            type="submit"
+            disabled={optionOneText === '' || optionTwoText === ''}
+          >
+            Sign in
+          </BaseButton>
         </form>
       </div>
     );
