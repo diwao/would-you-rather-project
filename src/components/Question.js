@@ -14,7 +14,7 @@ class Question extends Component {
           <img
             src={user.avatarURL}
             alt={user.id}
-            className="w-32 h-32 rounded-full mx-auto"
+            className="w-32 h-auto rounded-full mx-auto"
           />
         </div>
         <div className="flex-grow p-2 px-4">

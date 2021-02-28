@@ -26,7 +26,7 @@ class QuestionInput extends Component {
           <img
             alt="name"
             src={this.props.author.avatarURL}
-            className="w-32 h-32 rounded-full mx-auto"
+            className="w-32 h-auto rounded-full mx-auto"
           />
         </div>
 
