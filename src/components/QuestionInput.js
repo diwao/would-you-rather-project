@@ -21,14 +21,21 @@ class QuestionInput extends Component {
 
   render(props) {
     return (
-      <div>
-        <h3>{`Asked by ${this.props.author.name}`}</h3>
-        <div>
-          <img alt="name" src={this.props.author.avatarURL} />
+      <article className="flex bg-gray-100 rounded-xl p-4 py-2 mt-4 items-center shadow border">
+        <div className="flex items-center">
+          <img
+            alt="name"
+            src={this.props.author.avatarURL}
+            className="w-32 h-32 rounded-full mx-auto"
+          />
+        </div>
+
+        <div className="flex-grow p-2 px-4">
+          <h3 className="font-semibold text-purple-600 text-lg">{`Asked by ${this.props.author.name}`}</h3>
           <form onSubmit={this.handleSubmit}>
-            <p>Would you rather</p>
+            <p className="italic mt-2">Would you rather</p>
             <ul>
-              <li>
+              <li className="mt-1">
                 <input
                   id="optionOne"
                   type="radio"
@@ -40,7 +47,7 @@ class QuestionInput extends Component {
                   {this.props.question.optionOne.text}
                 </label>
               </li>
-              <li>
+              <li className="mt-1">
                 <input
                   id="optionTwo"
                   type="radio"
@@ -53,10 +60,12 @@ class QuestionInput extends Component {
                 </label>
               </li>
             </ul>
-            <BaseButton type="submit">Sign in</BaseButton>
+            <div className="mt-2">
+              <BaseButton type="submit">Submit</BaseButton>
+            </div>
           </form>
         </div>
-      </div>
+      </article>
     );
   }
 }
