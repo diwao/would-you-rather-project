@@ -60,12 +60,6 @@ class NewQuestion extends Component {
             value={optionTwoText}
             onChange={this.handleOptionTwo}
           />
-          {/* <button
-            type="submit"
-            disabled={optionOneText === '' || optionTwoText === ''}
-          >
-            Submit
-          </button> */}
           <BaseButton
             type="submit"
             disabled={optionOneText === '' || optionTwoText === ''}
