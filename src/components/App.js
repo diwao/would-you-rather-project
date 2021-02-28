@@ -18,7 +18,7 @@ class App extends Component {
     console.log(authedUser);
     return (
       <Router>
-        <div>
+        <div className="container mx-auto py-4">
           {authedUser === null ? (
             <SignIn />
           ) : (
