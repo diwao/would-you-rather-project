@@ -20,8 +20,6 @@ class QuestionPage extends Component {
   render() {
     return (
       <div>
-        <h2>question page.</h2>
-        <span>{`answered: ${this.props.answered}`}</span>
         {this.props.answered === true ? (
           <QuestionResult
             question={this.props.question}

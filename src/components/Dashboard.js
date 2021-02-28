@@ -17,8 +17,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h2>Dashboard</h2>
-        <div>
+        <div className="mt-2">
           <label htmlFor="unanswered">
             <input
               id="unanswered"
@@ -29,7 +28,7 @@ class Dashboard extends Component {
             />
             unanswered
           </label>
-          <label htmlFor="answered">
+          <label htmlFor="answered" className="ml-4">
             <input
               id="answered"
               type="radio"
