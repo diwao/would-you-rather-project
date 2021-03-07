@@ -31,7 +31,7 @@ class SignIn extends Component {
         <h1 className="text-6xl">Would you rather</h1>
         <p className="text-xl mt-10">Please Sign in</p>
 
-        <h3 className="text-2xl mt-5">Sign in</h3>
+        <h2 className="text-2xl mt-5">Sign in</h2>
         <form onSubmit={this.handleSubmit} className="mt-2">
           <select onChange={this.handleChange} defaultValue="">
             <option value="" disabled>
