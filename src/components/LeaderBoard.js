@@ -7,9 +7,9 @@ class LeaderBoard extends Component {
     const { userIds } = this.props;
     console.log(userIds);
     return (
-      <div>
-        <h2>Leader Board</h2>
-        <ol>
+      <div className="pt-10 leader-board">
+        <h2 className="text-2xl mt-5 text-center">Leader Board</h2>
+        <ol className="mt-4">
           {userIds.map((userId) => (
             <LeaderBoardItem key={userId} id={userId} />
           ))}

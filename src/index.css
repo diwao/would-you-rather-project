@@ -20,10 +20,23 @@ code {
   display: none;
 }
 
-.thumb {
-  width: 100px;
+.leader-board {
+  counter-reset: rank;
 }
 
-.thumb img {
-  max-width: 100%;
+.leader::before {
+  background-color:rgba(139, 92, 246);
+  border-radius: 50%;
+  color:#fff;
+  counter-increment: rank;
+  content: counter(rank);
+  display: block;
+  font-size: 1.2rem;
+  height: 30px;
+  left: 0;
+  position:absolute;
+  text-align: center;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 30px;
 }
