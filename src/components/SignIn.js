@@ -33,8 +33,8 @@ class SignIn extends Component {
 
         <h3 className="text-2xl mt-5">Sign in</h3>
         <form onSubmit={this.handleSubmit} className="mt-2">
-          <select onChange={this.handleChange}>
-            <option value="" disabled selected>
+          <select onChange={this.handleChange} defaultValue="">
+            <option value="" disabled>
               -
             </option>
             {this.props.userIds.map((userId) => (
