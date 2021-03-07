@@ -27,7 +27,7 @@ export default function QuestionResult(props) {
           <li className="border border-purple-300 p-2">
             <label htmlFor="resultOne" className="block">
               {`Would you rather ${question.optionOne.text}`}
-              <spam
+              <span
                 className={`bg-purple-500 text-white px-1 ml-1 ${
                   isSelected(question.optionOne, authedUser)
                     ? 'inline-block'
@@ -35,7 +35,7 @@ export default function QuestionResult(props) {
                 }`}
               >
                 Your Vote
-              </spam>
+              </span>
             </label>
             <div className="mt-1">
               <progress
@@ -54,7 +54,7 @@ export default function QuestionResult(props) {
           <li className="border border-purple-300 p-2 mt-2">
             <label htmlFor="resultTwo" className="block">
               {`Would you rather ${question.optionTwo.text}`}
-              <spam
+              <span
                 className={`bg-purple-500 text-white px-1 ml-1 ${
                   isSelected(question.optionTwo, authedUser)
                     ? 'inline-block'
@@ -62,7 +62,7 @@ export default function QuestionResult(props) {
                 }`}
               >
                 Your Vote
-              </spam>
+              </span>
             </label>
             <div className="mt-1">
               <progress
