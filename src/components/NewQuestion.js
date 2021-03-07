@@ -42,30 +42,34 @@ class NewQuestion extends Component {
   render() {
     const { optionOneText, optionTwoText } = this.state;
     return (
-      <div>
-        <h2>Create New Quesiton</h2>
-        <p>Complete the question</p>
+      <div className="text-center pt-10">
+        <h2 className="text-2xl">Create New Quesiton</h2>
+        <p className="text-xl mt-10">Complete the question</p>
         <form onSubmit={this.handleSubmit}>
-          <span>Would you rather than...</span>
+          <span className="block mt-5">Would you rather than...</span>
           <input
+            className="block mx-auto mt-2 w-2/3"
             type="text"
             placeholder="Enter option one here"
             value={optionOneText}
             onChange={this.handleOptionOne}
           />
-          <span>Or</span>
+          <span className="block mt-2">Or</span>
           <input
+            className="block mx-auto mt-2 w-2/3"
             type="text"
             placeholder="Enter option two here"
             value={optionTwoText}
             onChange={this.handleOptionTwo}
           />
-          <BaseButton
-            type="submit"
-            disabled={optionOneText === '' || optionTwoText === ''}
-          >
-            Sign in
-          </BaseButton>
+          <div className="mt-5">
+            <BaseButton
+              type="submit"
+              disabled={optionOneText === '' || optionTwoText === ''}
+            >
+              Sign in
+            </BaseButton>
+          </div>
         </form>
       </div>
     );
