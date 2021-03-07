@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 class Question extends Component {
   render() {
-    const { question, users, answered, isShow } = this.props;
+    const { question, users, isShow } = this.props;
     const user = users[question.author];
     if (!isShow) {
       return <div></div>;

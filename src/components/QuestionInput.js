@@ -61,7 +61,9 @@ class QuestionInput extends Component {
               </li>
             </ul>
             <div className="mt-2">
-              <BaseButton type="submit">Submit</BaseButton>
+              <BaseButton type="submit" disabled={this.state.option === null}>
+                Submit
+              </BaseButton>
             </div>
           </form>
         </div>
